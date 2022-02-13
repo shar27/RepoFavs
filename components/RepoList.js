@@ -92,7 +92,7 @@ export default function RepoList() {
           className="object-cover"
           layout="fill"
         />
-        <div className="grid grid-cols-3 grid-rows-2 gap-4  text-white  ">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4  text-white  ">
           <h1>Repo </h1>
           {data.items
             .sort(function (a, b) {

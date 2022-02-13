@@ -17,12 +17,12 @@ const [isEmpty, setIsEmpty] = useState(false);
   return (
 
       
-    <div className="relative z-0 top-44">
+    <div className="relative z-0 top-24  md:top-32 lg:top-44">
   
 <div className="absolute z-50 ">
   
-    <div className=" flex justify-between p-5 font-bold text-black text-3xl">
-      <div id="favsarray"  className=" container grid grid-cols-2 gap-2 p-2 text-black">
+    <div className=" flex justify-center lg:flex lg:justify-between p-5 font-bold text-black text-3xl">
+      <div id="favsarray"  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:p-2 text-black">
        
 
       </div>
