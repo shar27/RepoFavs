@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+html{
+overscroll-y: hidden;
+}
 body {
   padding: 0;
   margin: 0;
@@ -18,4 +20,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.white {
+  background-color: white;
+  border: solid 1px;
+  border-radius: 50px;
+  padding: 10px;
+  color: black;
+}
+
+.red {
+  background-color: red;
+  color: white;
+  border: solid 1px;
+  border-radius: 50px;
 }
