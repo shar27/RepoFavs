@@ -1,15 +1,17 @@
 import RepoList from '../components/RepoList'
-import { render, screen } from '@testing-library/react'
+import {render, screen, act} from '@testing-library/react'
+import { renderHook } from '@testing-library/react-hooks'
+
 import '@testing-library/jest-dom/extend-expect'
 
-describe('Fetch', () => {
-    it('renders a button', () => {
-      render(<RepoList />)
-  
-      const button = screen.getByRole('button', {
-        name: /Favorite me/i,
-      })
-  
-      expect(button).toBeInTheDocument()
-    })
-  })
+describe("Repo list", ()=> {
+    it("loads data", async () => {
+        global.fetch = jest.fn();
+
+        await act(async () => renderHook(()=> RepoList(("items"))));
+        
+        expect(global.fetch).toBeCalledWith(
+            "https://api.github.com/search/repositories?q=created:%3E2017-01-10&sort=stars&order=desc"
+        );
+    });
+});
